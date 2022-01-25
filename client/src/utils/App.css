@@ -1,0 +1,458 @@
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em;
+}
+
+@media screen and (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: row;
+  }
+  .recipe-grid {
+    margin: 0 -1em -1em -1em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .recipe-grid {
+    margin: -1em -1em -1em 0;
+  }
+
+  .Header {
+    max-width: 25em;
+    height: inherit;
+  }
+}
+
+.Header {
+  text-align: center;
+  background-color: #b5acb4;
+  border-radius: 0.75em;
+}
+
+.header-title {
+  margin: 0.25em 0.25em 0.5em 0.25em;
+  color: #2a1d28;
+  font-size: 4.3em;
+  font-family: "Permanent Marker", sans-serif;
+}
+
+.header-title:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .header-title {
+    font-size: 3.6em;
+  }
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.search-bar {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  padding: 0;
+}
+
+.search-bar-input {
+  border-radius: 0.3em;
+  background: linear-gradient(90deg, #2a1d28, #2a1d28) left bottom/100% 1.7px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 1.7px no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+  border: none;
+  appearance: none;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 1em;
+}
+
+.search-bar-input:focus::placeholder {
+  color: transparent;
+}
+
+.search-bar-input::placeholder {
+  color: #2a1d28;
+  transition: color 0.3s ease;
+}
+
+.search-button {
+  justify-content: right;
+  border-radius: 3px;
+  font-family: "Play", sans-serif;
+}
+
+.search-button:hover {
+  cursor: pointer;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+.login-out-buttons {
+  font-family: "Covered By Your Grace", sans-serif;
+  font-size: 1.9em;
+  color: #473144;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-out-buttons:hover {
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.2s ease-out;
+  transform: scale(1.1);
+  color: #2a1d28;
+}
+
+.login-out-buttons:focus,
+.login-out-buttons:hover {
+  outline: none;
+}
+
+.aboutme-link {
+  padding: 0;
+  color: #473144;
+  font-size: 1.9rem;
+  font-weight: 400;
+  font-family: "Covered By Your Grace", sans-serif;
+}
+
+.aboutme-link:hover,
+.aboutme-link:focus {
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.2s ease-out;
+  transform: scale(1.1);
+  color: #2a1d28;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-me {
+    width: 100%;
+  }
+}
+
+.about-me {
+  justify-content: center;
+  text-align: center;
+  color: #2a1d28;
+  max-width: 700px;
+  margin: 0 1em 0 1em;
+  height: 98vh;
+}
+
+.about-me-header {
+  font-size: 3em;
+  margin: 0.5em 0 0 0;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+  font-family: "Covered By Your Grace", sans-serif;
+}
+
+.about-me-subheader {
+  font-size: 1.7em;
+  text-align: center;
+  font-family: "Dongle", sans-serif;
+}
+
+.about-me-image {
+  justify-content: center;
+  text-align: center;
+  height: 17rem;
+  width: 20em;
+  border-radius: 0.75em;
+  object-fit: cover;
+  margin: 1.5em 0 2em 0;
+}
+
+.about-me-p {
+  font-size: 1.7em;
+  margin: 0 2em 0 2em;
+  color: #2a1d28;
+  font-family: "Dongle", sans-serif;
+}
+
+footer {
+  color: #2a1d28;
+  margin: 1em 0 0 0;
+  position: sticky;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Covered By Your Grace", sans-serif;
+}
+
+.loading {
+  text-align: center;
+  font-family: "Dongle", sans-serif;
+  justify-content: center;
+  font-size: 50px;
+  padding: 300px 0px;
+}
+
+.recipe-grid-container {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.recipe-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.grid-item {
+  flex: 1;
+  margin: 1em;
+}
+
+@media screen and (max-width: 750px) {
+  .grid-item {
+    flex: 2;
+  }
+}
+
+.recipe-card {
+  cursor: pointer;
+  border-radius: 0.5em;
+  background-color: #dcd3e84d;
+  box-shadow: 4px 8px 8px 4px #d0cad9c4;
+  min-width: 320px;
+  height: 350px;
+  border: 1px #d0cad9c4;
+  font-family: "Dongle", sans-serif;
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  box-shadow: 10px 10px 10px 10px #d0cad9c4;
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-size: 2.3em;
+  text-align: center;
+  color: #473144;
+  font-weight: 700;
+  padding: 0.25em 0 0 0;
+}
+
+.card-image {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0.75em;
+  height: 12rem;
+  width: 70%;
+  object-fit: cover;
+  padding: 0.25em 0 0 0;
+}
+
+.card-recipe-info {
+  text-align: center;
+  justify-content: center;
+  color: #473144;
+  font-size: 1.5em;
+  padding: 0 0 0.25em 0;
+}
+
+.RecipeDetails {
+  justify-content: center;
+  text-align: center;
+  display: block;
+  margin: 0 0.5em 0 0.5em;
+  background-color: #dcd3e84d;
+  font-family: "Dongle", sans-serif;
+  box-shadow: 2px 8px 8px 4px #d0cad9c4;
+  border-radius: 1em;
+  color: #2a1d28;
+}
+
+.details-title {
+  margin: 0.25em 0 0.25em 0;
+  text-align: center;
+  color: #2a1d28;
+  font-size: 5em;
+  font-family: "Covered By Your Grace", sans-serif;
+}
+
+.details-image {
+  margin: 0 0 1em 0;
+  height: 20em;
+  width: 60%;
+  border-radius: 1em;
+  object-fit: cover;
+}
+
+.details-time-yield-ingredients {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.details-header {
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: #2a1d28;
+}
+
+.details-time {
+  font-size: 1.7em;
+}
+
+.details-ingredient-list {
+  list-style: circle inside;
+  text-align: left;
+  font-size: 1.7em;
+  margin-block-start: 0;
+  padding: 0;
+  color: #2a1d28;
+}
+
+.details-method-steps {
+  list-style: decimal inside;
+  text-align: left;
+  color: #2a1d28;
+  font-size: 1.7em;
+  margin: 0 2em 2em 2em;
+  padding-inline-start: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .details-method-steps {
+    margin: 0 1.5em 1em 1.5em;
+  }
+}
+
+.comment-form {
+  font-size: 4em;
+  font-family: "Dongle", sans-serif;
+  color: #2a1d28;
+  justify-content: center;
+}
+
+.comment-form-header {
+  height: min-content;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-input {
+  border: none;
+  appearance: none;
+  outline: none;
+  border-radius: 0.3em;
+  width: 350px;
+  height: 100px;
+  font-size: 0.3em;
+  text-align: left;
+}
+
+.comment-submit-button {
+  justify-content: right;
+}
+
+/* .search-bar-input {
+  border-radius: 0.3em;
+  background: linear-gradient(90deg, #2a1d28, #2a1d28) left bottom/100% 1.7px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 1.7px no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+  border: none;
+  appearance: none;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 1em;
+}
+
+.search-bar-input:focus::placeholder {
+  color: transparent;
+}
+
+.search-bar-input::placeholder {
+  color: #2a1d28;
+  transition: color 0.3s ease;
+} */
+
+.comment-list {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.comment-card {
+  display: inline-block;
+  border-radius: 0.5em;
+  background-color: #dcd3e84d;
+  box-shadow: 2px 4px 4px 2px #d0cad9c4;
+  width: 90%;
+  margin: 0.5em 0 1em 0;
+  font-family: "Dongle", sans-serif;
+}
+
+.comment-card-header {
+  font-size: 1.7em;
+  text-align: left;
+  margin: 0;
+  padding: 0.17em 0 0 0.39em;
+}
+
+.comment-card-date {
+  text-align: left;
+  justify-content: left;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0 0 0 0.51em;
+  font-style: italic;
+}
+
+.comment-card-text {
+  font-size: 1.5em;
+  text-align: left;
+  margin: 0;
+  padding: 0 0 0 0.51em;
+}
+
+.sorry {
+  height: 98vh;
+  margin: 1em;
+}
