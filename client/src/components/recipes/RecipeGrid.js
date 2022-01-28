@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { fetchRecipes, searchRecipes } from "../../apis/recipes";
 
 import RecipeCard from "./RecipeCard";
+import RecipeNotFound from "./RecipeNotFound";
 
 const RecipeGrid = () => {
   const { search } = window.location;
@@ -13,7 +14,6 @@ const RecipeGrid = () => {
 
   useEffect(() => {
     setIsHydrated(false);
-    console.log(query);
     (query ? searchRecipes({ name: query }) : fetchRecipes())
       .then(setRecipes)
       .then(() => setIsHydrated(true));
@@ -27,12 +27,12 @@ const RecipeGrid = () => {
   }, [recipes, navigate]);
 
   if (!isHydrated) {
-    return <div className="sorry">Sorry....</div>;
+    return <RecipeNotFound />;
   }
 
   const renderList = () => {
     if (recipes.length === 0) {
-      return <div className="sorry">Sorry....</div>;
+      return <RecipeNotFound />;
     }
     return recipes.map((recipe) => {
       const id = recipe.id;

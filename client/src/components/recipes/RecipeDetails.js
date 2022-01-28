@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { fetchRecipe } from "../../apis/recipes";
-import CommentList from "../comments/CommentList";
+import CommentSection from "../comments/CommentSection";
 
 const RecipeDetails = () => {
   const [recipe, setRecipe] = useState();
@@ -17,12 +17,7 @@ const RecipeDetails = () => {
   }, [id]);
 
   if (!recipe || !isHydrated) {
-    return (
-      <div className="loading">
-        <br></br>
-        <em>just a moment!</em>
-      </div>
-    );
+    return null;
   }
 
   const renderList = (list) => {
@@ -56,8 +51,8 @@ const RecipeDetails = () => {
         <header className="details-header">Method:</header>
         <ul className="details-method-steps">{renderList(recipe.method)}</ul>
       </div>
-      <div>
-        <CommentList recipeId={recipe.id} />
+      <div className="comment-section">
+        <CommentSection recipeId={recipe.id} />
       </div>
     </div>
   );

@@ -7,13 +7,19 @@ export const fetchComments = async () => {
   return comments;
 };
 
-export const postComment = async (text, userName, recipeId, date) => {
+export const postComment = async (text, userNickname, userId, recipeId) => {
   const formData = {
     id: uuidv4(),
     text: text,
-    userName: userName,
+    userNickname: userNickname,
+    userId: userId,
     recipeId: parseInt(recipeId),
-    date: date,
+    date: new Date().toLocaleString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }),
   };
 
   const response = await axios
@@ -21,5 +27,5 @@ export const postComment = async (text, userName, recipeId, date) => {
     .then((response) => console.log(response))
     .catch((error) => console.log(error.response.data));
 
-  return console.log(response);
+  return response;
 };

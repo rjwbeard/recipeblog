@@ -22,7 +22,7 @@ const AboutMe = () => {
           when a new recipe drops!
         </p>
       </div>
-      <footer>2022 © Rebecca Beard</footer>
+      {/* <footer>2022 © Rebecca Beard</footer> */}
     </div>
   );
 };

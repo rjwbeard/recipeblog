@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import SearchBar from "./SearchBar";
-import { LoginButton, LogoutButton } from "./LogInAndOut";
+import Authentication from "./authentication/Authentication";
 
 const Header = () => {
+  const { isAuthenticated } = useAuth0();
   return (
     <div className="Header">
       <Link to="/">
@@ -11,11 +13,15 @@ const Header = () => {
       </Link>
       <SearchBar />
       <div className="header-links">
-        <LoginButton />
-        <LogoutButton />
+        <Authentication />
         <Link to="/aboutme">
           <h5 className="aboutme-link">About Me</h5>
         </Link>
+        {isAuthenticated ? (
+          <Link to="/recipes/favorites/:id">
+            <h5 className="aboutme-link">Favorites</h5>
+          </Link>
+        ) : null}
       </div>
     </div>
   );

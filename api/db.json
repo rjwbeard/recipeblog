@@ -1,62 +1,35 @@
 {
   "users": [
     {
-      "id": 0,
-      "userName": "rbccbeard"
+      "userId": "google-oauth2|101993076495107373546",
+      "userNickname": "rbccbeard",
+      "favoriteRecipes": [1, 3, 5]
     }
   ],
   "comments": [
     {
-      "id": "awesome!",
-      "text": "rbccbeard",
-      "userName": 0,
-      "recipeId": null
-    },
-    {
-      "id": "b729783d-18b1-4afe-bb45-e619605ef704",
-      "text": "rbccbeard",
-      "userName": 0,
-      "recipeId": null
-    },
-    {
-      "id": "b59339e2-29b7-4efd-ac74-5b56950ae795",
-      "text": "rbccbeard",
-      "userName": 0,
-      "recipeId": null
-    },
-    {
-      "id": "a864d606-bfe7-489b-a032-867c14762dc1",
-      "text": "rbccbeard",
-      "userName": 0,
-      "recipeId": null
-    },
-    {
-      "id": "0c3a6205-5e92-42e9-b516-def411eed709",
-      "text": "awesome!",
-      "userName": "rbccbeard",
+      "id": "f82190da-cef8-4884-8cf2-b3b635b51698",
+      "text": "wow!",
+      "userNickname": "rbccbeard",
+      "userId": "google-oauth2|101993076495107373546",
       "recipeId": 0,
-      "date": "Tuesday, Jan 25, 2022"
+      "date": "Wednesday, Jan 26, 2022"
     },
     {
-      "id": "00c126de-fec2-4fe5-84b9-571e98662e12",
-      "text": "wowza",
-      "userName": "rbccbeard",
+      "id": "5aa6968b-5ad5-4b63-8f37-48d006467bc4",
+      "text": "no way",
+      "userNickname": "rbccbeard",
+      "userId": "google-oauth2|101993076495107373546",
       "recipeId": 0,
-      "date": "Tuesday, Jan 25, 2022"
+      "date": "Wednesday, Jan 26, 2022"
     },
     {
-      "id": "668be81e-15fd-463d-a7d3-f40c11ab6a94",
-      "text": "delicious",
-      "userName": "rbccbeard",
-      "recipeId": 0,
-      "date": "Tuesday, Jan 25, 2022"
-    },
-    {
-      "id": "fde0976f-e4c2-42d1-900b-a05be20e4838",
-      "text": "yummers",
-      "userName": "rbccbeard",
+      "id": "b3457a90-5b98-4d50-9167-454d3ce5cd75",
+      "text": "gooooooooooey!",
+      "userNickname": "rbccbeard",
+      "userId": "google-oauth2|101993076495107373546",
       "recipeId": 2,
-      "date": "Tuesday, Jan 25, 2022"
+      "date": "Wednesday, Jan 26, 2022"
     }
   ],
   "recipes": [
@@ -65,13 +38,13 @@
       "name": "Quick Dinner Rolls",
       "description": "Everyone likes a fluffy roll- perfect for breakfast sandwiches or enjoying with soup!",
       "ingredients": [
-        "water",
-        "yeast",
-        "honey",
-        "butter",
-        "flour",
-        "salt",
-        "egg"
+        "1 c. water",
+        "1 T yeast",
+        "2 T honey",
+        "2 T butter",
+        "4 c. flour",
+        "1 t salt",
+        "1 egg"
       ],
       "activeTime": "20",
       "totalTime": "60",
@@ -92,13 +65,7 @@
       "id": 1,
       "name": "Pizza Dough",
       "description": "Pizza is the perfect vehicle for leftovers- make this dough and pile it high with whatever's in the fridge!",
-      "ingredients": [
-        "water",
-        "yeast",
-        "EVOO",
-        "flour",
-        "salt"
-      ],
+      "ingredients": ["water", "yeast", "EVOO", "flour", "salt"],
       "activeTime": "20",
       "totalTime": "150",
       "yield": "2 medium pies",
@@ -128,7 +95,7 @@
         "salt",
         "flour",
         "chocolate",
-        "nuts"
+        "walnuts"
       ],
       "activeTime": "25",
       "totalTime": "60",

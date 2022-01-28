@@ -20,9 +20,6 @@ a {
     flex-direction: column;
   }
 
-  footer {
-    flex-direction: row;
-  }
   .recipe-grid {
     margin: 0 -1em -1em -1em;
   }
@@ -129,8 +126,8 @@ a {
   color: #473144;
   background-color: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 1.65em 0 0 0;
+  display: flex;
 }
 
 .login-out-buttons:hover {
@@ -173,7 +170,6 @@ a {
   justify-content: center;
   text-align: center;
   color: #2a1d28;
-  max-width: 700px;
   margin: 0 1em 0 1em;
   height: 98vh;
 }
@@ -213,19 +209,13 @@ a {
 footer {
   color: #2a1d28;
   margin: 1em 0 0 0;
-  position: sticky;
-  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: inherit;
   text-align: center;
   justify-content: center;
   font-family: "Covered By Your Grace", sans-serif;
-}
-
-.loading {
-  text-align: center;
-  font-family: "Dongle", sans-serif;
-  justify-content: center;
-  font-size: 50px;
-  padding: 300px 0px;
 }
 
 .recipe-grid-container {
@@ -362,61 +352,53 @@ footer {
   }
 }
 
+.comment-section {
+  justify-content: center;
+  text-align: center;
+  min-width: 90%;
+}
+
 .comment-form {
-  font-size: 4em;
   font-family: "Dongle", sans-serif;
   color: #2a1d28;
-  justify-content: center;
+  height: 300px;
+  border-radius: 0.4em;
 }
 
 .comment-form-header {
-  height: min-content;
-  padding: 0;
-  margin: 0;
+  margin: 0 0 0 1em;
+  float: left;
+  font-size: 3em;
 }
 
 .comment-input {
+  border-radius: 0.3em;
   border: none;
   appearance: none;
   outline: none;
-  border-radius: 0.3em;
-  width: 350px;
-  height: 100px;
-  font-size: 0.3em;
-  text-align: left;
+  min-width: 90%;
+  height: 130px;
+  font-size: 1.3em;
+  resize: none;
+  padding: 0.25em;
+  margin: 0;
 }
 
 .comment-submit-button {
-  justify-content: right;
-}
-
-/* .search-bar-input {
-  border-radius: 0.3em;
-  background: linear-gradient(90deg, #2a1d28, #2a1d28) left bottom/100% 1.7px
-      no-repeat,
-    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 1.7px no-repeat,
-    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
-  border: none;
-  appearance: none;
-  outline: none;
-  width: 250px;
-  height: 30px;
-  font-size: 1em;
-}
-
-.search-bar-input:focus::placeholder {
-  color: transparent;
-}
-
-.search-bar-input::placeholder {
+  width: 4em;
+  height: 1.5em;
+  float: right;
+  margin: 0 2.5em 0 0;
+  font-family: "Dongle", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 0.25em;
   color: #2a1d28;
-  transition: color 0.3s ease;
-} */
+  transition: transform 0.2s;
+}
 
-.comment-list {
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+.comment-submit-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .comment-card {
@@ -432,8 +414,8 @@ footer {
 .comment-card-header {
   font-size: 1.7em;
   text-align: left;
-  margin: 0;
-  padding: 0.17em 0 0 0.39em;
+  padding: 0;
+  margin: 0.17em 0 0 0.5em;
 }
 
 .comment-card-date {
@@ -452,7 +434,28 @@ footer {
   padding: 0 0 0 0.51em;
 }
 
-.sorry {
-  height: 98vh;
+.recipe-not-found {
+  display: inline-block;
   margin: 1em;
+  height: 91vh;
+  color: #2a1d28;
+  font-size: 3em;
+  justify-content: center;
+  font-family: "Dongle", sans-serif;
+}
+
+.recipe-not-found-face {
+  justify-content: center;
+  text-align: center;
+  font-size: 7em;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+}
+
+.recipe-not-found-message {
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }

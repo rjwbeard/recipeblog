@@ -7,14 +7,12 @@ const CommentForm = ({ text, setCommentText, onSubmit }) => {
   return (
     <form className="comment-form" onSubmit={onSubmit}>
       <label className="comment-form-header">Leave a Comment</label>
-      <br></br>
-      <input
+      <textarea
         className="comment-input"
         value={text}
         type="text"
         onChange={handleInputChange}
-      ></input>
-      <br></br>
+      ></textarea>
       <input className="comment-submit-button" type="submit" value="Submit" />
     </form>
   );
