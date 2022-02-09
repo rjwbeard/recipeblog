@@ -9,58 +9,90 @@ a {
   text-decoration: none;
 }
 
-.app {
+.App {
   display: flex;
   flex-direction: row;
-  margin: 0.5em;
+  height: 99vh;
+  margin: 0.5vh;
 }
 
 @media screen and (max-width: 900px) {
-  .app {
+  .App {
     flex-direction: column;
   }
 
-  .recipe-grid {
+  .RecipeGrid {
     margin: 0 -1em -1em -1em;
+  }
+
+  .Header {
+    max-height: 27em;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .app {
+  .App {
     flex-direction: row;
   }
 
-  .recipe-grid {
+  .RecipeGrid {
     margin: -1em -1em -1em 0;
   }
 
   .Header {
     max-width: 25em;
-    height: inherit;
   }
 }
 
 .Header {
+  margin: 0.5em;
   text-align: center;
   background-color: #b5acb4;
   border-radius: 0.75em;
+  display: flex;
+  flex-direction: column;
 }
 
-.header-title {
+.Header_title {
   margin: 0.25em 0.25em 0.5em 0.25em;
   color: #2a1d28;
   font-size: 4.3em;
   font-family: "Permanent Marker", sans-serif;
 }
 
-.header-title:hover {
+.Header_title:hover {
   cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {
-  .header-title {
+  .Header_title {
     font-size: 3.6em;
   }
+}
+
+.Header_links {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0.25em;
+}
+
+.Header_link {
+  padding: 0;
+  color: #473144;
+  font-size: 1.9rem;
+  font-weight: 400;
+  font-family: "Covered By Your Grace", sans-serif;
+}
+
+.Header_link:hover,
+.Header_link:focus {
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.2s ease-out;
+  transform: scale(1.1);
+  color: #2a1d28;
 }
 
 .visually-hidden {
@@ -73,19 +105,15 @@ a {
   width: 1px;
 }
 
-.search-bar {
+.SearchBar {
   justify-content: center;
   text-align: center;
   display: flex;
   padding: 0;
 }
 
-.search-bar-input {
+.SearchBar_input {
   border-radius: 0.3em;
-  background: linear-gradient(90deg, #2a1d28, #2a1d28) left bottom/100% 1.7px
-      no-repeat,
-    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 1.7px no-repeat,
-    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
   border: none;
   appearance: none;
   outline: none;
@@ -94,79 +122,35 @@ a {
   font-size: 1em;
 }
 
-.search-bar-input:focus::placeholder {
+.SearchBar_input:focus::placeholder {
   color: transparent;
 }
 
-.search-bar-input::placeholder {
+.SearchBar_input::placeholder {
   color: #2a1d28;
   transition: color 0.3s ease;
 }
 
-.search-button {
-  justify-content: right;
-  border-radius: 3px;
-  font-family: "Play", sans-serif;
-}
-
-.search-button:hover {
-  cursor: pointer;
-}
-
-.header-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 0;
-}
-
-.login-out-buttons {
+.Authentication_buttons {
   font-family: "Covered By Your Grace", sans-serif;
   font-size: 1.9em;
   color: #473144;
   background-color: transparent;
   border: none;
-  padding: 1.65em 0 0 0;
   display: flex;
 }
 
-.login-out-buttons:hover {
+.Authentication_buttons:focus,
+.Authentication_buttons:hover {
   cursor: pointer;
   font-style: italic;
   transition: all 0.2s ease-out;
   transform: scale(1.1);
   color: #2a1d28;
-}
-
-.login-out-buttons:focus,
-.login-out-buttons:hover {
   outline: none;
 }
 
-.aboutme-link {
-  padding: 0;
-  color: #473144;
-  font-size: 1.9rem;
-  font-weight: 400;
-  font-family: "Covered By Your Grace", sans-serif;
-}
-
-.aboutme-link:hover,
-.aboutme-link:focus {
-  cursor: pointer;
-  font-style: italic;
-  transition: all 0.2s ease-out;
-  transform: scale(1.1);
-  color: #2a1d28;
-}
-
-@media screen and (min-width: 1200px) {
-  .about-me {
-    width: 100%;
-  }
-}
-
-.about-me {
+.AboutMe {
   justify-content: center;
   text-align: center;
   color: #2a1d28;
@@ -174,8 +158,14 @@ a {
   height: 98vh;
 }
 
-.about-me-header {
-  font-size: 3em;
+@media screen and (min-width: 1200px) {
+  .AboutMe {
+    width: 100%;
+  }
+}
+
+.AboutMe_title {
+  font-size: 3.5em;
   margin: 0.5em 0 0 0;
   font-weight: 700;
   text-align: center;
@@ -183,13 +173,13 @@ a {
   font-family: "Covered By Your Grace", sans-serif;
 }
 
-.about-me-subheader {
+.AboutMe_subtitle {
   font-size: 1.7em;
   text-align: center;
   font-family: "Dongle", sans-serif;
 }
 
-.about-me-image {
+.AboutMe_image {
   justify-content: center;
   text-align: center;
   height: 17rem;
@@ -199,8 +189,8 @@ a {
   margin: 1.5em 0 2em 0;
 }
 
-.about-me-p {
-  font-size: 1.7em;
+.AboutMe > p {
+  font-size: 2em;
   margin: 0 2em 0 2em;
   color: #2a1d28;
   font-family: "Dongle", sans-serif;
@@ -218,207 +208,259 @@ footer {
   font-family: "Covered By Your Grace", sans-serif;
 }
 
-.recipe-grid-container {
-  margin: 0 auto;
+.RecipeGrid_container {
   height: 100%;
+  overflow-y: scroll;
 }
 
-.recipe-grid {
+.RecipeGrid_container::-webkit-scrollbar {
+  display: none;
+}
+
+.RecipeGrid {
+  margin: -0.25em 0.25em -0.25em 0.25em;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
 
-.grid-item {
+.RecipeGrid_item {
   flex: 1;
   margin: 1em;
 }
 
-@media screen and (max-width: 750px) {
-  .grid-item {
-    flex: 2;
-  }
-}
-
-.recipe-card {
+.RecipeCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   background-color: #dcd3e84d;
   box-shadow: 4px 8px 8px 4px #d0cad9c4;
-  min-width: 320px;
-  height: 350px;
+  min-width: 290px;
+  height: 300px;
   border: 1px #d0cad9c4;
   font-family: "Dongle", sans-serif;
   transition: transform 0.2s;
 }
 
-.recipe-card:hover {
+.RecipeCard:hover {
   box-shadow: 10px 10px 10px 10px #d0cad9c4;
   transform: scale(1.02);
 }
 
-.card-title {
+.RecipeCard_title {
   font-size: 2.3em;
   text-align: center;
   color: #473144;
   font-weight: 700;
-  padding: 0.25em 0 0 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
-.card-image {
-  display: inline-block;
-  text-align: center;
+.RecipeCard_image_container {
+  display: flex;
   justify-content: center;
-  border-radius: 0.75em;
-  height: 12rem;
-  width: 70%;
-  object-fit: cover;
-  padding: 0.25em 0 0 0;
 }
 
-.card-recipe-info {
+.RecipeCard_image {
+  justify-content: center;
+  align-content: center;
+  border-radius: 0.5em;
+  object-fit: cover;
+  height: 150px;
+  width: 300px;
+}
+
+.RecipeCard_times {
   text-align: center;
   justify-content: center;
   color: #473144;
-  font-size: 1.5em;
-  padding: 0 0 0.25em 0;
+  font-size: 1.6em;
+  padding: 0.25em 0 0 0;
 }
 
 .RecipeDetails {
-  justify-content: center;
-  text-align: center;
-  display: block;
-  margin: 0 0.5em 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  margin: 0.5em;
   background-color: #dcd3e84d;
   font-family: "Dongle", sans-serif;
   box-shadow: 2px 8px 8px 4px #d0cad9c4;
-  border-radius: 1em;
+  border-radius: 0.5em;
   color: #2a1d28;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.details-title {
+.RecipeDetails::-webkit-scrollbar {
+  display: none;
+}
+
+.RecipeDetails_header {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.RecipeDetails_header_title {
+  width: 100%;
   margin: 0.25em 0 0.25em 0;
   text-align: center;
   color: #2a1d28;
-  font-size: 5em;
+  font-size: 4em;
   font-family: "Covered By Your Grace", sans-serif;
 }
 
-.details-image {
-  margin: 0 0 1em 0;
+.RecipeDetails_header_image {
   height: 20em;
-  width: 60%;
-  border-radius: 1em;
+  width: 30em;
+  border-radius: 0.5em;
   object-fit: cover;
 }
 
-.details-time-yield-ingredients {
+.RecipeDetails_body {
   display: flex;
-  justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 
-.details-header {
-  justify-content: center;
+.RecipeDetails_body_short_details {
+  width: 50%;
+  text-align: center;
+}
+
+.RecipeDetails_body_header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   font-weight: 700;
   font-size: 2.2em;
   color: #2a1d28;
 }
 
-.details-time {
+.RecipeDetails_body_time {
   font-size: 1.7em;
 }
 
-.details-ingredient-list {
-  list-style: circle inside;
-  text-align: left;
-  font-size: 1.7em;
-  margin-block-start: 0;
-  padding: 0;
-  color: #2a1d28;
+.RecipeDetails_body_ingredients {
+  width: 50%;
+  text-align: center;
 }
 
-.details-method-steps {
-  list-style: decimal inside;
-  text-align: left;
-  color: #2a1d28;
+.RecipeDetails_body_ingredients_list {
   font-size: 1.7em;
-  margin: 0 2em 2em 2em;
+  color: #2a1d28;
+  text-align: left;
+}
+
+.RecipeDetails_body_ingredients_list > ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  list-style-type: none;
   padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.RecipeDetails_body_method {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.RecipeDetails_body_method > ol {
+  padding-inline-start: 0px;
+}
+
+.RecipeDetails_body_method_steps {
+  color: #2a1d28;
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  font-size: 1.7em;
+  justify-content: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 850px) {
-  .details-method-steps {
+  .RecipeDetails_body_method_steps {
     margin: 0 1.5em 1em 1.5em;
   }
 }
 
-.comment-section {
+.CommentSection {
   justify-content: center;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  min-width: 90%;
+  min-width: 80%;
 }
 
-.comment-form {
-  font-family: "Dongle", sans-serif;
+.CommentForm {
+  font-family: "Covered By Your Grace", sans-serif;
   color: #2a1d28;
-  height: 300px;
   border-radius: 0.4em;
 }
 
-.comment-form-header {
-  margin: 0 0 0 1em;
+.CommentForm_header {
+  margin: 0 0 0 2em;
   float: left;
-  font-size: 3em;
+  font-size: 2em;
 }
 
-.comment-input {
+.CommentForm_input {
   border-radius: 0.3em;
   border: none;
   appearance: none;
   outline: none;
   min-width: 90%;
-  height: 130px;
+  height: 7em;
   font-size: 1.3em;
   resize: none;
   padding: 0.25em;
   margin: 0;
 }
 
-.comment-submit-button {
-  width: 4em;
-  height: 1.5em;
+.CommentForm_submit_button {
+  padding: 0;
+  color: #473144;
+  font-size: 1.9rem;
+  font-weight: 400;
+  font-family: "Covered By Your Grace", sans-serif;
   float: right;
-  margin: 0 2.5em 0 0;
-  font-family: "Dongle", sans-serif;
-  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  margin: 0 2.5em 1em 0;
   border-radius: 0.25em;
-  color: #2a1d28;
   transition: transform 0.2s;
 }
 
-.comment-submit-button:hover {
+.CommentForm_submit_button:hover {
   cursor: pointer;
+  color: #2a1d28;
   transform: scale(1.05);
 }
 
-.comment-card {
+.CommentCard {
   display: inline-block;
   border-radius: 0.5em;
   background-color: #dcd3e84d;
   box-shadow: 2px 4px 4px 2px #d0cad9c4;
   width: 90%;
-  margin: 0.5em 0 1em 0;
+  margin: 0.5em 0 1.5em 0;
   font-family: "Dongle", sans-serif;
 }
 
-.comment-card-header {
+.CommentCard_header {
   font-size: 1.7em;
   text-align: left;
   padding: 0;
   margin: 0.17em 0 0 0.5em;
 }
 
-.comment-card-date {
+.CommentCard_date {
   text-align: left;
   justify-content: left;
   font-size: 1.5em;
@@ -427,14 +469,14 @@ footer {
   font-style: italic;
 }
 
-.comment-card-text {
+.CommentCard_text {
   font-size: 1.5em;
   text-align: left;
   margin: 0;
   padding: 0 0 0 0.51em;
 }
 
-.recipe-not-found {
+.RecipeNotFound {
   display: inline-block;
   margin: 1em;
   height: 91vh;
@@ -444,7 +486,7 @@ footer {
   font-family: "Dongle", sans-serif;
 }
 
-.recipe-not-found-face {
+.RecipeNotFound_face {
   justify-content: center;
   text-align: center;
   font-size: 7em;
@@ -453,9 +495,83 @@ footer {
   height: fit-content;
 }
 
-.recipe-not-found-message {
+.RecipeNotFound_message {
   justify-content: center;
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+.RecipeForm {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0.5em;
+  background-color: #dcd3e84d;
+  font-family: "Dongle", sans-serif;
+  box-shadow: 2px 8px 8px 4px #d0cad9c4;
+  border-radius: 0.5em;
+  color: #2a1d28;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 1.3em;
+  justify-content: center;
+  text-align: center;
+}
+
+.RecipeForm::-webkit-scrollbar {
+  display: none;
+}
+
+.RecipeForm_header {
+  font-size: 2.5em;
+  width: 100%;
+  height: min-content;
+  margin: 0;
+  padding: 0;
+}
+
+.RecipeForm_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.RecipeForm_label {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: left;
+}
+
+.RecipeForm_input {
+  width: 100%;
+  font-size: 1.1em;
+}
+
+.RecipeForm_textarea {
+  width: 100%;
+  height: 7em;
+  resize: none;
+  overflow-y: scroll;
+  font-size: 1.3em;
+  overflow: auto;
+}
+
+.RecipeForm_submit_button {
+  font-size: 1.1em;
+  border-radius: 0.25em;
+  background-color: transparent;
+  margin: 1em 0 1em 0;
+  border: none;
+  color: #2a1d28;
+}
+
+.RecipeForm_submit_button:hover {
+  cursor: pointer;
+  font-style: italic;
+  transform: scale(1.05);
 }

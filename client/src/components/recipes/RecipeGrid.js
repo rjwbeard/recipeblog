@@ -5,11 +5,10 @@ import { fetchRecipes, searchRecipes } from "../../apis/recipes";
 import RecipeCard from "./RecipeCard";
 import RecipeNotFound from "./RecipeNotFound";
 
-const RecipeGrid = () => {
+const RecipeGrid = ({ isHydrated, setIsHydrated }) => {
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [recipes, setRecipes] = useState([]);
-  const [isHydrated, setIsHydrated] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const RecipeGrid = () => {
     return recipes.map((recipe) => {
       const id = recipe.id;
       return (
-        <div key={id} className="grid-item">
+        <div key={id} className="RecipeGrid_item">
           <Link to={`/recipes/${id}`}>
             <RecipeCard recipe={recipe} id={id} />
           </Link>
@@ -47,8 +46,8 @@ const RecipeGrid = () => {
   };
 
   return (
-    <div className="recipe-grid-container">
-      <div className="recipe-grid">{renderList()}</div>
+    <div className="RecipeGrid_container">
+      <div className="RecipeGrid">{renderList()}</div>
     </div>
   );
 };

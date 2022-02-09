@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 import { fetchRecipe } from "../../apis/recipes";
 import CommentSection from "../comments/CommentSection";
@@ -20,40 +21,39 @@ const RecipeDetails = () => {
     return null;
   }
 
-  const renderList = (list) => {
-    const renderedList = list.map((item, i) => <li key={i}>{item}</li>);
-    return renderedList;
-  };
-
   return (
     <div className="RecipeDetails">
-      <header>
-        <h1 className="details-title">{recipe.name}</h1>
-        <img className="details-image" src={recipe.image} alt="food"></img>
-      </header>
-      <div className="details-time-yield-ingredients">
-        <div>
-          <header className="details-header">Active Time: </header>
-          <div className="details-time">{recipe.activeTime} minutes</div>
-          <header className="details-header">Total Time: </header>
-          <div className="details-time">{recipe.totalTime} minutes</div>
-          <header className="details-header">Yield: </header>
-          <div className="details-time">{recipe.yield}</div>
+      <div className="RecipeDetails_header">
+        <h1 className="RecipeDetails_header_title">{recipe.name}</h1>
+        <img
+          className="RecipeDetails_header_image"
+          src={recipe.image}
+          alt="food"
+        ></img>
+      </div>
+      <div className="RecipeDetails_body">
+        <div className="RecipeDetails_body_short_details">
+          <header className="RecipeDetails_body_header">Active Time: </header>
+          <div className="RecipeDetails_body_time">{recipe.activeTime}</div>
+          <header className="RecipeDetails_body_header">Total Time: </header>
+          <div className="RecipeDetails_body_time">{recipe.totalTime}</div>
+          <header className="RecipeDetails_body_header">Yield: </header>
+          <div className="RecipeDetails_body_time">{recipe.yield}</div>
         </div>
-        <div>
-          <header className="details-header">Ingredients: </header>
-          <ul className="details-ingredient-list">
-            {renderList(recipe.ingredients)}
-          </ul>
+        <div className="RecipeDetails_body_ingredients">
+          <header className="RecipeDetails_body_header">Ingredients: </header>
+          <ReactMarkdown className="RecipeDetails_body_ingredients_list">
+            {recipe.ingredients}
+          </ReactMarkdown>
+        </div>
+        <div className="RecipeDetails_body_method">
+          <header className="RecipeDetails_body_header">Method:</header>
+          <ReactMarkdown className="RecipeDetails_body_method_steps">
+            {recipe.method}
+          </ReactMarkdown>
         </div>
       </div>
-      <div className="details-method">
-        <header className="details-header">Method:</header>
-        <ul className="details-method-steps">{renderList(recipe.method)}</ul>
-      </div>
-      <div className="comment-section">
-        <CommentSection recipeId={recipe.id} />
-      </div>
+      <CommentSection recipeId={parseInt(recipe.id)} />
     </div>
   );
 };

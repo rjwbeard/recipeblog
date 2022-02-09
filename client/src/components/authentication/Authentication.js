@@ -10,7 +10,7 @@ const Authentication = () => {
     return <div></div>;
   }
 
-  return <span>{isAuthenticated ? <LogOutButton /> : <LogInButton />}</span>;
+  return <div>{isAuthenticated ? <LogOutButton /> : <LogInButton />}</div>;
 };
 
 export default Authentication;

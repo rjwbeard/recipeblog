@@ -1,9 +1,9 @@
 const CommentCard = ({ user, text, date }) => {
   return (
-    <div className="comment-card">
-      <header className="comment-card-header">{user}</header>
-      <div className="comment-card-date">{date}</div>
-      <p className="comment-card-text">{text}</p>
+    <div className="CommentCard">
+      <header className="CommentCard_header">{user}</header>
+      <div className="CommentCard_date">{date}</div>
+      <p className="CommentCard_text">{text}</p>
     </div>
   );
 };

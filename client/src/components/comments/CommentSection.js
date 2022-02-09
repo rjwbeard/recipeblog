@@ -13,6 +13,7 @@ const CommentSection = ({ recipeId }) => {
   const loadComments = async () => {
     const commentsData = await fetchComments();
     setComments(commentsData);
+    console.log(commentsData);
   };
 
   useEffect(() => {
@@ -44,14 +45,15 @@ const CommentSection = ({ recipeId }) => {
   };
 
   const filterComments = (commentArray, recipeId) => {
+    console.log(commentArray, recipeId);
     const filteredComments = commentArray.filter(
-      (r) => r.recipeId === recipeId
+      (r) => parseInt(r.recipeId) === recipeId
     );
     return filteredComments;
   };
 
   const filteredComments = filterComments(comments, recipeId);
-
+  console.log(filteredComments);
   const renderComments = (commentArray) => {
     const renderedComments = [...commentArray].reverse().map((c, i) => {
       return (
@@ -64,7 +66,7 @@ const CommentSection = ({ recipeId }) => {
   };
 
   return (
-    <div className="comment-section">
+    <div className="CommentSection">
       {renderCommentForm(isAuthenticated)}
       {renderComments(filteredComments)}
     </div>

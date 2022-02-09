@@ -2,23 +2,21 @@ import React from "react";
 
 const RecipeCard = ({ recipe }) => {
   return (
-    <div className="recipe-card">
-      <div>
-        <em>
-          <div className="card-title">{recipe.name}</div>
-        </em>
-        <div className="card-recipe-info">
-          <img
-            src={recipe.image}
-            className="card-image"
-            alt="picture-of-food"
-          ></img>
-          <div>
-            <b>Active Time:</b> {recipe.activeTime} minutes
-          </div>
-          <div>
-            <b>Total Time:</b> {recipe.totalTime} minutes
-          </div>
+    <div className="RecipeCard">
+      <h1 className="RecipeCard_title">{recipe.name}</h1>
+      <div className="RecipeCard_image_container">
+        <img
+          src={recipe.image}
+          className="RecipeCard_image"
+          alt="picture-of-food"
+        ></img>
+      </div>
+      <div className="RecipeCard_times">
+        <div>
+          <b>Active Time:</b> {recipe.activeTime}
+        </div>
+        <div>
+          <b>Total Time:</b> {recipe.totalTime}
         </div>
       </div>
     </div>

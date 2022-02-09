@@ -5,7 +5,7 @@ const LogOutButton = () => {
 
   return (
     <button
-      className="login-out-buttons"
+      className="Authentication_buttons"
       onClick={() => {
         logout();
       }}

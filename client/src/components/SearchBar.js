@@ -4,18 +4,18 @@ const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="search-bar">
+    <div className="SearchBar">
       <form method="get" action="/" type="text" className="form">
-        <label htmlFor="header-search">
+        <label htmlFor="SearchBar_label">
           <span className="visually-hidden">Search all Recipes</span>
         </label>
         <input
-          className="search-bar-input"
+          className="SearchBar_input"
           autoComplete="off"
           type="text"
           value={searchQuery}
           onInput={(e) => setSearchQuery(e.target.value)}
-          id="header-search"
+          id="SearchBar_label"
           name="s"
           placeholder="Search all Recipes"
         />
