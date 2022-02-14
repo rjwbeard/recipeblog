@@ -10,7 +10,7 @@ const Comment = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    text: {
+    commentText: {
       type: DataTypes.STRING(1000),
       allowNull: false,
     },
@@ -19,10 +19,10 @@ const Comment = sequelize.define(
       allowNull: false,
     },
     userId: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.STRING(1000),
       allowNull: false,
     },
-    recipeId: {
+    commentRecipeId: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
@@ -39,10 +39,10 @@ const Comment = sequelize.define(
 const seedComments = async () => {
   await Comment.sync({ force: true });
   await Comment.create({
-    text: "fuck this was delicious",
+    commentText: "fuck this was delicious",
     userNickname: "rbccbeard",
-    userId: 0,
-    recipeId: 2,
+    userId: "google-oauth2|101993076495107373546",
+    commentRecipeId: 2,
     date: "Wednesday, Jan 26, 2022",
   }).catch((e) => {
     console.error(e);

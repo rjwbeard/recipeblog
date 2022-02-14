@@ -71,6 +71,25 @@ app.get("/comments", async (req, res) => {
   Comment.findAll().then((comments) => res.json(comments));
 });
 
+app.post("/comments/add", async (req, res) => {
+  await Comment.create(
+    {
+      commentText: req.body.commentText,
+      userNickname: req.body.userNickname,
+      userId: req.body.userId,
+      commentRecipeId: req.body.commentRecipeId,
+      date: req.body.date,
+    },
+    { isNewRecord: true }
+  )
+    .then((recipe) => {
+      res.json(recipe);
+    })
+    .catch((e) => {
+      console.error(e);
+    });
+});
+
 app.listen(port, () => console.log(`listening to port ${port}!`));
 
 // app.get("/ingredient", async (req, res) => {

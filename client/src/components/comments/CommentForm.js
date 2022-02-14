@@ -1,17 +1,15 @@
-const CommentForm = ({ text, setCommentText, onSubmit }) => {
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setCommentText(value);
-  };
-
+const CommentForm = ({ commentText, setCommentText, onSubmit }) => {
   return (
-    <form className="CommentForm" onSubmit={onSubmit}>
-      <label className="CommentForm_header">Leave a Comment</label>
+    <form className="CommentForm" onSubmit={async (e) => await onSubmit(e)}>
+      <label className="CommentForm_header" htmlFor="CommentForm_input">
+        Leave a Comment
+      </label>
       <textarea
+        name="CommentForm_input"
         className="CommentForm_input"
-        value={text}
+        value={commentText}
         type="text"
-        onChange={handleInputChange}
+        onChange={(e) => setCommentText(e.target.value)}
       ></textarea>
       <input
         className="CommentForm_submit_button"

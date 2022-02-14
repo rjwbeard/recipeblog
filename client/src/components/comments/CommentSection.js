@@ -9,6 +9,7 @@ const CommentSection = ({ recipeId }) => {
   const [comments, setComments] = useState([]);
   const [commentText, setCommentText] = useState("");
   const { user, isAuthenticated } = useAuth0();
+  const commentRecipeId = parseInt(recipeId);
 
   const loadComments = async () => {
     const commentsData = await fetchComments();
@@ -20,11 +21,29 @@ const CommentSection = ({ recipeId }) => {
     loadComments();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postComment(commentText, user.nickname, user.sub, recipeId);
-    loadComments();
-    setCommentText("");
+    const userNickname = user.nickname;
+    const userId = user.sub;
+    const date = new Date().toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+    await postComment({
+      commentText,
+      userNickname,
+      userId,
+      commentRecipeId,
+      date,
+    }).then(
+      () => {
+        loadComments();
+        setCommentText("");
+      },
+      (e) => console.error(e)
+    );
   };
 
   const renderCommentForm = (isAuthenticated) => {
@@ -32,28 +51,27 @@ const CommentSection = ({ recipeId }) => {
       isAuthenticated && (
         <div>
           <CommentForm
-            text={commentText}
+            commentText={commentText}
             setCommentText={setCommentText}
             onSubmit={handleSubmit}
             userNickname={user.nickname}
             userId={user.sub}
-            recipeId={recipeId}
+            commentRecipeId={commentRecipeId}
           />
         </div>
       )
     );
   };
 
-  const filterComments = (commentArray, recipeId) => {
-    console.log(commentArray, recipeId);
-    const filteredComments = commentArray.filter(
-      (r) => parseInt(r.recipeId) === recipeId
-    );
+  const filterComments = (commentArray, commentRecipeId) => {
+    const filteredComments = commentArray.filter((r) => {
+      return parseInt(r.commentRecipeId) === commentRecipeId;
+    });
     return filteredComments;
   };
 
-  const filteredComments = filterComments(comments, recipeId);
-  console.log(filteredComments);
+  const filteredComments = filterComments(comments, commentRecipeId);
+
   const renderComments = (commentArray) => {
     const renderedComments = [...commentArray].reverse().map((c, i) => {
       return (
