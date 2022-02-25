@@ -1,11 +1,11 @@
 const { Sequelize } = require("sequelize");
-const sequelize = new Sequelize(
-  "postgres://pi:Lemon~Magician7~Batboy@localhost:5432/recipeblog",
-  {
-    host: "localhost",
-    dialect: "postgres",
-  }
-);
+
+require("dotenv").config();
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  host: "localhost",
+  dialect: "postgres",
+});
 
 try {
   sequelize.authenticate().then(() => {
