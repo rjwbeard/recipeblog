@@ -4,7 +4,6 @@ const port = 3001;
 const cors = require("cors");
 const logger = require("morgan");
 const bodyParser = require("body-parser");
-const jwt = require("jsonwebtoken");
 
 app.use(cors());
 app.use(logger("dev"));
