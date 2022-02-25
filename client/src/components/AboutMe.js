@@ -8,13 +8,13 @@ const AboutMe = () => {
         className="AboutMe_image"
       ></img>
       <p className="AboutMe_paragraph">
-        My name's Rebecca and I really love feeding people. I think that recipes
-        are best treated as guidelines and that food is the best way to bring
-        people together. So experiment, make some substitutions, and invite a
-        few friends over. With a couple of clicks you can log in to the Cookie
+        I'm Rebecca and I really love to feed people. I think recipes are best
+        treated as guidelines and that food is the best way to bring people
+        together. So experiment, make some substitutions, and invite a few
+        friends over! With a couple of clicks you can log in to the Cookie
         Worldwide community and gain access to both the comment section and the
         soon-to-come Add A Recipe feature, where users can share their own
-        kitchen creations! Thank you for hanging out here with me, I hope you
+        kitchen creations. Thank you for hanging out here with me, I hope you
         come back soon!
       </p>
     </div>
