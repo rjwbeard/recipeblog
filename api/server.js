@@ -91,15 +91,3 @@ app.post("/comments/add", async (req, res) => {
 });
 
 app.listen(port, () => console.log(`listening to port ${port}!`));
-
-// app.get("/ingredient", async (req, res) => {
-//   Ingredient.findAll().then((ingredients) => res.json(ingredients));
-// });
-
-// app.get("/method", async (req, res) => {
-//   Method.findAll().then((methods) => res.json(methods));
-// });
-
-// app.get("/user", async (req, res) => {
-//   User.findAll().then((users) => res.json(users));
-// });
