@@ -17,16 +17,6 @@ const Header = () => {
         <Link to="/aboutme">
           <h5 className="Header_link">About Me</h5>
         </Link>
-        {isAuthenticated ? (
-          <Link to="/recipes/favorites/:id">
-            <h5 className="Header_link">Favorites</h5>
-          </Link>
-        ) : null}
-      </div>
-      <div className="Header_RecipeForm_link visually-hidden">
-        <Link to="/recipes/add">
-          <h5 className="Header_link">New Recipe</h5>
-        </Link>
       </div>
     </div>
   );

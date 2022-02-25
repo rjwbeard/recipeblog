@@ -1,14 +1,15 @@
 const express = require("express");
 const app = express();
 const port = 3001;
-
 const cors = require("cors");
-app.use(cors());
 const logger = require("morgan");
+const bodyParser = require("body-parser");
+const jwt = require("jsonwebtoken");
+
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 const { Recipe } = require("./models/Recipe");

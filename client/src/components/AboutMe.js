@@ -1,27 +1,22 @@
 const AboutMe = () => {
   return (
     <div className="AboutMe">
-      <div className="AboutMe_header">
-        <header className="AboutMe_title">Howdy Friends!</header>
-        <div className="AboutMe_subtitle">
-          Welcome to my personal recipe blog :D
-        </div>
-      </div>
-      <div className="AboutMe_details">
-        <img
-          src="https://images.pexels.com/photos/4781434/pexels-photo-4781434.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          alt="the-author"
-          className="AboutMe_image"
-        ></img>
-        <p>
-          I'm a very cool chick. I love to cook and I love to bake and I love to
-          share meals with my friends and family! Like Madeline and her friends
-          once said, 'We love our bread, we love our butter, but most of all we
-          love eachother'. That's how I feel about bread, butter, and those
-          closest to me. Sign up for my newsletter to be notified when a new
-          recipe drops!
-        </p>
-      </div>
+      <header className="AboutMe_title">Howdy, Friends!</header>
+      <img
+        src="https://drive.google.com/uc?export=view&id=1RJ1GfFMzURQRNVqKOZKSULOODiIyLPGe"
+        alt="the-author"
+        className="AboutMe_image"
+      ></img>
+      <p className="AboutMe_paragraph">
+        My name's Rebecca and I really love feeding people. I think that recipes
+        are best treated as guidelines and that food is the best way to bring
+        people together. So experiment, make some substitutions, and invite a
+        few friends over. With a couple of clicks you can log in to the Cookie
+        Worldwide community and gain access to both the comment section and the
+        soon-to-come Add A Recipe feature, where users can share their own
+        kitchen creations! Thank you for hanging out here with me, I hope you
+        come back soon!
+      </p>
     </div>
   );
 };

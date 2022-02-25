@@ -21,10 +21,15 @@ const RecipeDetails = () => {
     return null;
   }
 
+  console.log(recipe);
+
   return (
     <div className="RecipeDetails">
       <div className="RecipeDetails_header">
         <h1 className="RecipeDetails_header_title">{recipe.name}</h1>
+        <h4 className="RecipeDetails_header_description">
+          {recipe.description}
+        </h4>
         <img
           className="RecipeDetails_header_image"
           src={recipe.image}
@@ -42,15 +47,11 @@ const RecipeDetails = () => {
         </div>
         <div className="RecipeDetails_body_ingredients">
           <header className="RecipeDetails_body_header">Ingredients: </header>
-          <ReactMarkdown className="RecipeDetails_body_ingredients_list">
-            {recipe.ingredients}
-          </ReactMarkdown>
+          <ReactMarkdown>{recipe.ingredients}</ReactMarkdown>
         </div>
         <div className="RecipeDetails_body_method">
           <header className="RecipeDetails_body_header">Method:</header>
-          <ReactMarkdown className="RecipeDetails_body_method_steps">
-            {recipe.method}
-          </ReactMarkdown>
+          <ReactMarkdown>{recipe.method}</ReactMarkdown>
         </div>
       </div>
       <CommentSection recipeId={parseInt(recipe.id)} />

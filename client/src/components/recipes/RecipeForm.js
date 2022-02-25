@@ -177,3 +177,9 @@ const RecipeForm = ({ setIsHydrated }) => {
 };
 
 export default RecipeForm;
+
+// {isAuthenticated ? (
+//   <Link to="/recipes/add">
+//     <h5 className="Header_link">Add Recipe</h5>
+//   </Link>
+// ) : null}

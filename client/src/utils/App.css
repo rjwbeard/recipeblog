@@ -151,61 +151,45 @@ a {
 }
 
 .AboutMe {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
+  align-items: center;
+  height: min-content;
   color: #2a1d28;
-  margin: 0 1em 0 1em;
-  height: 98vh;
-}
-
-@media screen and (min-width: 1200px) {
-  .AboutMe {
-    width: 100%;
-  }
+  margin: 1em;
 }
 
 .AboutMe_title {
   font-size: 3.5em;
-  margin: 0.5em 0 0 0;
   font-weight: 700;
   text-align: center;
   justify-content: center;
   font-family: "Covered By Your Grace", sans-serif;
-}
-
-.AboutMe_subtitle {
-  font-size: 1.7em;
-  text-align: center;
-  font-family: "Dongle", sans-serif;
+  margin: 0.25em;
 }
 
 .AboutMe_image {
+  display: flex;
   justify-content: center;
   text-align: center;
-  height: 17rem;
+  height: 17em;
   width: 20em;
-  border-radius: 0.75em;
+  border-radius: 0.5em;
   object-fit: cover;
-  margin: 1.5em 0 2em 0;
+  margin: 0 0 2em 0;
 }
 
-.AboutMe > p {
-  font-size: 2em;
-  margin: 0 2em 0 2em;
+.AboutMe_paragraph {
+  font-size: 1.8em;
+  display: flex;
+  justify-self: center;
   color: #2a1d28;
+  width: 75%;
+  margin-block-start: 0;
+  margin-block-end: 0;
   font-family: "Dongle", sans-serif;
-}
-
-footer {
-  color: #2a1d28;
-  margin: 1em 0 0 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: inherit;
-  text-align: center;
-  justify-content: center;
-  font-family: "Covered By Your Grace", sans-serif;
 }
 
 .RecipeGrid_container {
@@ -241,19 +225,20 @@ footer {
   height: 300px;
   border: 1px #d0cad9c4;
   font-family: "Dongle", sans-serif;
-  transition: transform 0.2s;
+  transition: ease-in-out 0.2s;
 }
 
 .RecipeCard:hover {
   box-shadow: 10px 10px 10px 10px #d0cad9c4;
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .RecipeCard_title {
-  font-size: 2.3em;
+  font-size: 1.8em;
   text-align: center;
   color: #473144;
-  font-weight: 700;
+  font-family: "Covered By Your Grace", sans-serif;
+  letter-spacing: 0.07em;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -269,7 +254,8 @@ footer {
   border-radius: 0.5em;
   object-fit: cover;
   height: 150px;
-  width: 300px;
+  width: 250px;
+  margin: 0.5em;
 }
 
 .RecipeCard_times {
@@ -277,13 +263,12 @@ footer {
   justify-content: center;
   color: #473144;
   font-size: 1.6em;
-  padding: 0.25em 0 0 0;
 }
 
 .RecipeDetails {
   display: flex;
   flex-direction: column;
-  width: 96%;
+  width: 97%;
   margin: 0.5em;
   background-color: #dcd3e84d;
   font-family: "Dongle", sans-serif;
@@ -306,16 +291,31 @@ footer {
 
 .RecipeDetails_header_title {
   width: 100%;
-  margin: 0.25em 0 0.25em 0;
+  margin: 0.25em 0 0 0;
+  padding: 0;
   text-align: center;
   color: #2a1d28;
   font-size: 4em;
   font-family: "Covered By Your Grace", sans-serif;
 }
 
+.RecipeDetails_header_description {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: center;
+  align-content: center;
+  margin: 0.25em 3em;
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  color: #2a1d28;
+}
+
 .RecipeDetails_header_image {
-  height: 20em;
-  width: 30em;
+  height: 17em;
+  margin: 1em;
+  min-width: 60%;
   border-radius: 0.5em;
   object-fit: cover;
 }
@@ -323,6 +323,7 @@ footer {
 .RecipeDetails_body {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .RecipeDetails_body_short_details {
@@ -331,6 +332,8 @@ footer {
 }
 
 .RecipeDetails_body_header {
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -343,15 +346,28 @@ footer {
   font-size: 1.7em;
 }
 
+pre {
+  display: flex;
+  justify-content: center;
+  font-size: 1.7em;
+  color: #2a1d28;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+code {
+  display: flex;
+  font-family: "Dongle", sans-serif;
+  width: inherit;
+  justify-content: center;
+}
+
 .RecipeDetails_body_ingredients {
   width: 50%;
   text-align: center;
-}
-
-.RecipeDetails_body_ingredients_list {
-  font-size: 1.7em;
-  color: #2a1d28;
-  text-align: left;
+  flex-wrap: wrap;
 }
 
 .RecipeDetails_body_ingredients_list > ul {
@@ -365,23 +381,14 @@ footer {
 }
 
 .RecipeDetails_body_method {
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-}
-
-.RecipeDetails_body_method > ol {
-  padding-inline-start: 0px;
-}
-
-.RecipeDetails_body_method_steps {
-  color: #2a1d28;
   display: flex;
-  width: 100%;
-  flex-flow: row wrap;
-  font-size: 1.7em;
+  text-align: center;
+  flex-flow: column wrap;
   justify-content: center;
-  text-align: left;
+  width: 90%;
+  padding: 1em;
+  margin: 1em 3.5em 1em 3.5em;
+  flex-basis: min-content;
 }
 
 @media screen and (max-width: 850px) {
@@ -399,40 +406,51 @@ footer {
 }
 
 .CommentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: "Covered By Your Grace", sans-serif;
   color: #2a1d28;
   border-radius: 0.4em;
 }
 
 .CommentForm_header {
-  margin: 0 0 0 2em;
-  float: left;
+  display: flex;
+  justify-content: flex-start;
   font-size: 2em;
+  width: 80%;
 }
 
 .CommentForm_input {
+  display: flex;
+  justify-content: center;
   border-radius: 0.3em;
   border: none;
   appearance: none;
   outline: none;
-  min-width: 90%;
-  height: 7em;
-  font-size: 1.3em;
+  width: 80%;
+  height: 4em;
+  font-size: 1.7em;
+  line-height: 80%;
   resize: none;
-  padding: 0.25em;
+  padding: 0.5em;
   margin: 0;
+  font-family: "Dongle", sans-serif;
 }
 
 .CommentForm_submit_button {
-  padding: 0;
+  padding: 0.5em;
   color: #473144;
+  background-color: transparent;
   font-size: 1.9rem;
   font-weight: 400;
   font-family: "Covered By Your Grace", sans-serif;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
   border: none;
   outline: none;
-  margin: 0 2.5em 1em 0;
   border-radius: 0.25em;
   transition: transform 0.2s;
 }
@@ -440,7 +458,7 @@ footer {
 .CommentForm_submit_button:hover {
   cursor: pointer;
   color: #2a1d28;
-  transform: scale(1.05);
+  font-style: italic;
 }
 
 .CommentCard {
@@ -477,13 +495,11 @@ footer {
 }
 
 .RecipeNotFound {
-  display: inline-block;
-  margin: 1em;
-  height: 91vh;
   color: #2a1d28;
-  font-size: 3em;
   justify-content: center;
   font-family: "Dongle", sans-serif;
+  font-size: 2.5em;
+  width: 100%;
 }
 
 .RecipeNotFound_face {
@@ -492,7 +508,6 @@ footer {
   font-size: 7em;
   padding: 0;
   margin: 0;
-  height: fit-content;
 }
 
 .RecipeNotFound_message {
@@ -545,9 +560,11 @@ footer {
   flex-direction: row;
   width: 100%;
   justify-content: left;
+  margin: 0;
 }
 
 .RecipeForm_input {
+  height: 1.7em;
   width: 100%;
   font-size: 1.1em;
 }

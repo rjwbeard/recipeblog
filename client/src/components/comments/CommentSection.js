@@ -14,7 +14,6 @@ const CommentSection = ({ recipeId }) => {
   const loadComments = async () => {
     const commentsData = await fetchComments();
     setComments(commentsData);
-    console.log(commentsData);
   };
 
   useEffect(() => {
@@ -25,12 +24,7 @@ const CommentSection = ({ recipeId }) => {
     e.preventDefault();
     const userNickname = user.nickname;
     const userId = user.sub;
-    const date = new Date().toLocaleDateString("en-us", {
-      weekday: "long",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
+    const date = new Date().toLocaleDateString("en-us");
     await postComment({
       commentText,
       userNickname,
@@ -76,7 +70,11 @@ const CommentSection = ({ recipeId }) => {
     const renderedComments = [...commentArray].reverse().map((c, i) => {
       return (
         <div key={i}>
-          <CommentCard user={c.userNickname} text={c.text} date={c.date} />
+          <CommentCard
+            user={c.userNickname}
+            text={c.commentText}
+            date={c.date}
+          />
         </div>
       );
     });
