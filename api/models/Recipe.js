@@ -233,8 +233,8 @@ const seedRecipes = async () => {
     name: "Veggie Burgers",
     description: "Easy and filling weeknight dinner!",
     ingredients: `
-    - 1 can black beans, drained and rinsed
-    - 1 lb. shiitake mushrooms, destemmed and sliced
+    - 1 can black beans, drained + rinsed
+    - 1 lb. shiitake mushrooms, sliced
     - 2 T EVOO
     - 3/4 c. bell pepper, finely diced
     - 1 c. yellow onion, finely diced
