@@ -8,7 +8,7 @@ const RecipeCard = ({ recipe }) => {
         <img
           src={recipe.image}
           className="RecipeCard_image"
-          alt="picture-of-food"
+          alt="delicious-food"
         ></img>
       </div>
       <div className="RecipeCard_times">

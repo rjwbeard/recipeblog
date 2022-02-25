@@ -16,7 +16,7 @@ const RecipeGrid = ({ isHydrated, setIsHydrated }) => {
     (query ? searchRecipes({ name: query }) : fetchRecipes())
       .then(setRecipes)
       .then(() => setIsHydrated(true));
-  }, [query]);
+  }, [query, setIsHydrated]);
 
   useEffect(() => {
     if (recipes.length === 1) {

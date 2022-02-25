@@ -11,4 +11,5 @@ export const postComment = async (formValues) => {
     .post("/comments/add", { ...formValues })
     .then((response) => console.log(response))
     .catch((e) => console.error(e.response.data));
+  return response;
 };
