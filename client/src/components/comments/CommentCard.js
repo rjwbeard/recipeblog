@@ -5,7 +5,6 @@ const CommentCard = ({ user, text, date }) => {
     month: "short",
     day: "numeric",
   });
-  console.log(date);
 
   return (
     <div className="CommentCard">
