@@ -24,7 +24,8 @@ const CommentSection = ({ recipeId }) => {
     e.preventDefault();
     const userNickname = user.nickname;
     const userId = user.sub;
-    const date = new Date().toLocaleDateString("en-us");
+    const date = new Date();
+    console.log(date);
     await postComment({
       commentText,
       userNickname,

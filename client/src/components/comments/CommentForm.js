@@ -11,11 +11,9 @@ const CommentForm = ({ commentText, setCommentText, onSubmit }) => {
         type="text"
         onChange={(e) => setCommentText(e.target.value)}
       ></textarea>
-      <input
-        className="CommentForm_submit_button"
-        type="submit"
-        value="Submit"
-      />
+      <button className="CommentForm_submit_button" type="submit">
+        Submit
+      </button>
     </form>
   );
 };

@@ -1,15 +1,16 @@
-const CommentCard = ({ user, text, date: rawDate }) => {
-  const date = new Date(rawDate).toLocaleDateString("en-us", {
+const CommentCard = ({ user, text, date }) => {
+  const formattedDate = new Date(date).toLocaleDateString("en-us", {
     weekday: "long",
     year: "numeric",
     month: "short",
     day: "numeric",
   });
+  console.log(date);
 
   return (
     <div className="CommentCard">
       <header className="CommentCard_header">{user}</header>
-      <div className="CommentCard_date">{date}</div>
+      <div className="CommentCard_date">{formattedDate}</div>
       <p className="CommentCard_text">{text}</p>
     </div>
   );

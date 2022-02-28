@@ -348,7 +348,14 @@ a {
   font-size: 1.7em;
 }
 
-pre {
+.RecipeDetails_body_ingredients {
+  width: 50%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.ReactMarkdown {
+  font-family: "Dongle", sans-serif;
   display: flex;
   justify-content: center;
   font-size: 1.7em;
@@ -356,23 +363,19 @@ pre {
   margin: 0;
   text-align: left;
   width: 100%;
+}
+
+pre {
   white-space: pre-wrap;
+  font-family: inherit;
+  margin: 0;
 }
 
 code {
-  display: flex;
-  font-family: "Dongle", sans-serif;
-  width: inherit;
-  justify-content: center;
+  font-family: inherit;
 }
 
-.RecipeDetails_body_ingredients {
-  width: 50%;
-  text-align: center;
-  flex-wrap: wrap;
-}
-
-.RecipeDetails_body_ingredients_list > ul {
+/* .RecipeDetails_body_ingredients_list > ul {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -380,7 +383,7 @@ code {
   padding-inline-start: 0;
   margin-block-start: 0;
   margin-block-end: 0;
-}
+} */
 
 .RecipeDetails_body_method {
   display: flex;
