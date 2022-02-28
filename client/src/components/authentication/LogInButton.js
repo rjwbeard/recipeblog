@@ -7,6 +7,7 @@ const LogInButton = () => {
     <button
       className="Authentication_buttons"
       onClick={(e) => {
+        console.log(e);
         loginWithRedirect();
       }}
     >
