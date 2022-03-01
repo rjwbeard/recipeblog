@@ -369,6 +369,7 @@ pre {
   white-space: pre-wrap;
   font-family: inherit;
   margin: 0;
+  padding: 0.5em;
 }
 
 code {
@@ -390,10 +391,7 @@ code {
   text-align: center;
   flex-flow: column wrap;
   justify-content: center;
-  width: 90%;
-  padding: 1em;
-  margin: 1em 3.5em 1em 3.5em;
-  flex-basis: min-content;
+  width: 80%;
 }
 
 @media screen and (max-width: 850px) {
