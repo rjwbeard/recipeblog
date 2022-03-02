@@ -112,7 +112,7 @@ const seedRecipes = async () => {
     description:
       "The secret to this dijon dressing is a splash of sweet pickle brine :)",
     ingredients:
-      "- 2 cloves garlic, minced\n- 1/2 a shallot, minced\n-2 T apple cider vinegar\n- 2 T dijon mustard\n- 1 T sweet pickle brine\n- 1 T maple syrup\n- 1/3 c. EVOO\n- 1 t dried dill (optional)",
+      "- 2 cloves garlic, minced\n- 1/2 a shallot, minced\n- 2 T apple cider vinegar\n- 2 T dijon mustard\n- 1 T sweet pickle brine\n- 1 T maple syrup\n- 1/3 c. EVOO\n- 1 t dried dill (optional)",
     activeTime: "10 min.",
     totalTime: "10 min.",
     yield: "8oz",
@@ -147,7 +147,7 @@ const seedRecipes = async () => {
     name: "Veggie Burgers",
     description: "Easy and filling weeknight dinner!",
     ingredients:
-      "- 1 can black beans, drained + rinsed\n- 1 lb. shiitake mushrooms, sliced\n- 2 T EVOO\n- 3/4 c. bell pepper, finely diced\n- 1 c. yellow onion, finely diced\n- 6 cloves garlic, minced\n- 2 t ground cumin\n- 1 t chili powder\n- 1 t smoked paprika\n- 1/2 c. bread crumbs\n- 2 large eggs\n- 1 t miso\n- 1 T worcestershire sauce\n- 2 T ketchup or BBQ sauce",
+      "- 1 can black beans, rinsed\n- 1 lb. shiitake mushrooms, sliced\n- 2 T EVOO\n- 3/4 c. bell pepper, finely diced\n- 1 c. yellow onion, finely diced\n- 6 cloves garlic, minced\n- 2 t ground cumin\n- 1 t chili powder\n- 1 t smoked paprika\n- 1/2 c. bread crumbs\n- 2 large eggs\n- 1 t miso\n- 1 T worcestershire sauce\n- 2 T ketchup or BBQ sauce",
     activeTime: "20 min.",
     totalTime: "40 min.",
     yield: "6 servings",
