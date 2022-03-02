@@ -108,7 +108,7 @@ const seedRecipes = async () => {
   });
 
   await Recipe.create({
-    name: "Maple Mustard Dressing",
+    name: "Maple Dijon Dressing",
     description:
       "The secret to this dijon dressing is a splash of sweet pickle brine :)",
     ingredients:
