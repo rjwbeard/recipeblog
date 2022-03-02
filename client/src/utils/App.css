@@ -18,45 +18,6 @@ a {
   margin: 0.5vh;
 }
 
-@media screen and (max-width: 900px) {
-  .App {
-    flex-direction: column;
-  }
-
-  .RecipeGrid {
-    margin: 0 -1em -1em -1em;
-  }
-
-  .Header {
-    max-height: 23em;
-  }
-
-  .Header_link {
-    height: fit-content;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding: 0.5em;
-  }
-
-  .RecipeCard {
-    max-height: 280px;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .App {
-    flex-direction: row;
-  }
-
-  .RecipeGrid {
-    margin: -1em -1em -1em 0;
-  }
-
-  .Header {
-    max-width: 25em;
-  }
-}
-
 .Header {
   margin: 0.5em;
   text-align: center;
@@ -78,12 +39,6 @@ a {
 
 .Header_title:hover {
   cursor: pointer;
-}
-
-@media screen and (max-width: 900px) {
-  .Header_title {
-    font-size: 3.3em;
-  }
 }
 
 .Header_links {
@@ -397,12 +352,6 @@ code {
   width: 80%;
 }
 
-@media screen and (max-width: 850px) {
-  .RecipeDetails_body_method_steps {
-    margin: 0 1.5em 1em 1.5em;
-  }
-}
-
 .CommentSection {
   justify-content: center;
   display: flex;
@@ -603,4 +552,71 @@ code {
   cursor: pointer;
   font-style: italic;
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .RecipeGrid {
+    margin: 0 -1em -1em -1em;
+  }
+
+  .Header {
+    height: 15em;
+  }
+
+  .Header_title {
+    font-size: 2.7em;
+    margin-block-end: 0.2em;
+    margin-block-start: 0.2em;
+  }
+
+  .Header_link {
+    height: fit-content;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0.5em;
+  }
+
+  .SearchBar {
+    padding: 0.3em;
+  }
+
+  .RecipeGrid_item {
+    display: flex;
+    margin: 0.7em;
+    justify-self: center;
+    justify-content: center;
+  }
+
+  .RecipeCard {
+    max-height: 230px;
+    width: 420px;
+  }
+
+  .RecipeCard_image {
+    height: 115px;
+    width: 225px;
+    margin: 0.25em;
+  }
+
+  .RecipeDetails_body_method_steps {
+    margin: 0 1.5em 1em 1.5em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .App {
+    flex-direction: row;
+  }
+
+  .RecipeGrid {
+    margin: -1em -1em -1em 0;
+  }
+
+  .Header {
+    max-width: 25em;
+  }
 }
