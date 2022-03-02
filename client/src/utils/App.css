@@ -28,7 +28,18 @@ a {
   }
 
   .Header {
-    max-height: 27em;
+    max-height: 23em;
+  }
+
+  .Header_link {
+    height: fit-content;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0.5em;
+  }
+
+  .RecipeCard {
+    max-height: 280px;
   }
 }
 
@@ -56,7 +67,10 @@ a {
 }
 
 .Header_title {
-  margin: 0.25em 0.25em 0.5em 0.25em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0.25em;
   color: #2a1d28;
   font-size: 4.3em;
   font-family: "Permanent Marker", sans-serif;
@@ -68,23 +82,22 @@ a {
 
 @media screen and (max-width: 900px) {
   .Header_title {
-    font-size: 3.6em;
+    font-size: 3.3em;
   }
 }
 
 .Header_links {
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   display: flex;
   flex-flow: row wrap;
-  margin: 0.25em;
 }
 
 .Header_link {
-  padding: 0;
   color: #473144;
   font-size: 1.9rem;
   font-weight: 400;
+  width: fit-content;
   font-family: "Covered By Your Grace", sans-serif;
 }
 
@@ -375,16 +388,6 @@ pre {
 code {
   font-family: inherit;
 }
-
-/* .RecipeDetails_body_ingredients_list > ul {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  list-style-type: none;
-  padding-inline-start: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-} */
 
 .RecipeDetails_body_method {
   display: flex;

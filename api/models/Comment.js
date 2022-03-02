@@ -39,7 +39,7 @@ const Comment = sequelize.define(
 const seedComments = async () => {
   await Comment.sync({ force: true });
   await Comment.create({
-    commentText: "fuck this was delicious",
+    commentText: "delicious :)",
     userNickname: "rbccbeard",
     userId: "google-oauth2|101993076495107373546",
     commentRecipeId: 2,
