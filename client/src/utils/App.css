@@ -342,16 +342,6 @@ ol {
   margin: 0;
 }
 
-pre {
-  white-space: pre-wrap;
-  font-family: inherit;
-  margin: 0;
-}
-
-code {
-  font-family: inherit;
-}
-
 .RecipeDetails_body_method {
   display: flex;
   text-align: center;
@@ -643,10 +633,6 @@ code {
   .RecipeDetails_body_header {
     font-size: 1.9em;
     padding: 0.15em;
-  }
-
-  pre {
-    padding: 0;
   }
 
   .RecipeDetails_body_time {
